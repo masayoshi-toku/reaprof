@@ -22,11 +22,11 @@ const ProfileList: FC<ProfileListProps> = ({
     <Header as="h2">{group}</Header>
     <Item.Group>
       {profiles.map(p => (
-        // #FIXME: Each child in a list SHOULD have id
-        <Item>
+        <Item key={p.id}>
           <Icon name="user circle" size="huge" />
           <Item.Content>
             <Item.Header>{p.name}</Item.Header>
+            <Item.Meta>{p.id}</Item.Meta>
             <Item.Meta>{p.age}歳</Item.Meta>
             <Item.Meta>{p.love}</Item.Meta>
             <Item.Meta>{p.sex}</Item.Meta>
